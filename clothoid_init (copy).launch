@@ -1,0 +1,7 @@
+<launch>
+	<node pkg="stereo_cam" type="stereo_cam_node" output="screen" name="stereo" args="/home/clothoid/catkin_ws/src/stereo_cam/launch/stereo_cam.launch"/>
+	<include file="$(find sicktoolbox_wrapper2)/launch/lms5xx_quad.launch"/>
+	<node pkg="gateway_can" type="gateway_can_node" name="gateway_can" output="screen" />
+	<node pkg="ublox" type="ublox_node" name="ublox" output="screen" args="/dev/ttyACM0 115200" />
+
+</launch>
